@@ -36,9 +36,9 @@ void insertion_sort_list(listint_t **list)
 				*list = iterator;
 			insert->prev = iterator;
 
+
 			insert = iterator->prev;
 
-			/* Print the list after the swap */
 			print_list((const listint_t *)*list);
 		}
 	}
