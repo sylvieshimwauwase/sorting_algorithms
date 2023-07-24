@@ -7,9 +7,9 @@
  */
 void swap_ints(int *a, int *b)
 {
-    int tmp = *a;
-    *a = *b;
-    *b = tmp;
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
 /**
@@ -24,33 +24,33 @@ void swap_ints(int *a, int *b)
  */
 void lomuto_quicksort(int *array, size_t size, int left, int right)
 {
-    if (right <= left)
-        return;
+	int *pivot = array + right;
+	int above = left, below;
 
-    int *pivot = array + right;
-    int above = left;
+	if (right <= left)
+		return;
 
-    for (int below = left; below < right; below++)
-    {
-        if (array[below] < *pivot)
-        {
-            if (above < below)
-            {
-                swap_ints(array + below, array + above);
-                print_array(array, size);
-            }
-            above++;
-        }
-    }
+	for (below = left; below < right; below++)
+	{
+		if (array[below] < *pivot)
+		{
+			if (above < below)
+			{
+				swap_ints(array + below, array + above);
+				print_array(array, size);
+			}
+			above++;
+		}
+	}
 
-    if (array[above] > *pivot)
-    {
-        swap_ints(array + above, pivot);
-        print_array(array, size);
-    }
+	if (array[above] > *pivot)
+	{
+		swap_ints(array + above, pivot);
+		print_array(array, size);
+	}
 
-    lomuto_quicksort(array, size, left, above - 1);
-    lomuto_quicksort(array, size, above + 1, right);
+	lomuto_quicksort(array, size, left, above - 1);
+	lomuto_quicksort(array, size, above + 1, right);
 }
 
 /**
@@ -62,8 +62,8 @@ void lomuto_quicksort(int *array, size_t size, int left, int right)
  */
 void quick_sort(int *array, size_t size)
 {
-    if (array == NULL || size < 2)
-        return;
+	if (array == NULL || size < 2)
+		return;
 
-    lomuto_quicksort(array, size, 0, size - 1);
+	lomuto_quicksort(array, size, 0, size - 1);
 }
