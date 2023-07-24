@@ -1,26 +1,28 @@
 #include "sort.h"
 
 /**
- * swap_ints - Swap two integers in an array.
- * @a: The first integer to swap.
- * @b: The second integer to swap.
+ * swap_ints - Swap two integers
+ * @a: The first integer
+ * @b: The second integer
+ *
+ * Return: void
  */
 void swap_ints(int *a, int *b)
 {
-	int tmp = *a;
+	int swap = *a;
 	*a = *b;
-	*b = tmp;
+	*b = swap;
 }
 
 /**
- * lomuto_quicksort - Implement the quicksort algorithm using the Lomuto partition scheme.
- * @array: An array of integers to sort.
- * @size: The size of the array.
- * @left: The starting index of the array partition to order.
- * @right: The ending index of the array partition to order.
+ * lomuto_quicksort - Implement the quicksort algorithm using
+ * the Lomuto partition scheme
+ * @array: The array of integers to sort
+ * @size: The size of @array
+ * @left: The starting index of @array
+ * @right: The ending index of @array
  *
- * Description: This function sorts a subset of the array using the Lomuto partition scheme
- * and calls itself recursively to sort the remaining partitions.
+ * Return: void
  */
 void lomuto_quicksort(int *array, size_t size, int left, int right)
 {
@@ -54,11 +56,12 @@ void lomuto_quicksort(int *array, size_t size, int left, int right)
 }
 
 /**
- * quick_sort - Sort an array of integers in ascending order using the quicksort algorithm.
- * @array: An array of integers.
- * @size: The size of the array.
+ * quick_sort - This function sorts an array of integers in ascending order
+ * using the Quick sort algorithm
+ * @array: The array of integers to sort
+ * @size: The size of @array
  *
- * Description: Uses the Lomuto partition scheme. Prints the array after each swap of two elements.
+ * Return: void
  */
 void quick_sort(int *array, size_t size)
 {
